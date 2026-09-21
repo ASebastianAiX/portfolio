@@ -1,51 +1,325 @@
-<main class="page-container about-page">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ABOUT INTRO -->
+  <title>About | Apollo Sebastian</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0f172a;
+      color: #ffffff;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #111827;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #38bdf8;
+    }
+
+    .page-container {
+      width: 86%;
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 70px 0;
+    }
+
+    .about-hero {
+      max-width: 950px;
+      padding-bottom: 70px;
+    }
+
+    .section-label {
+      color: #38bdf8;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.15;
+      margin-bottom: 25px;
+    }
+
+    h2 {
+      color: #38bdf8;
+      font-size: 36px;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 17px;
+      margin-bottom: 16px;
+    }
+
+    .about-lead {
+      font-size: 21px;
+      color: #e2e8f0;
+    }
+
+    .section-heading {
+      max-width: 850px;
+      margin-bottom: 40px;
+    }
+
+    .about-section {
+      margin-bottom: 90px;
+    }
+
+    .category-title {
+      color: #ffffff;
+      font-size: 24px;
+      margin-bottom: 25px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #334155;
+    }
+
+    .education-category {
+      margin-bottom: 60px;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .foundation-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .info-card,
+    .mini-card {
+      background-color: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .info-card {
+      min-height: 245px;
+    }
+
+    .mini-card {
+      min-height: 140px;
+    }
+
+    .info-card:hover,
+    .mini-card:hover {
+      border-color: #38bdf8;
+    }
+
+    .credential {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    .card-meta {
+      color: #38bdf8;
+      font-size: 14px;
+    }
+
+    .card-status {
+      display: inline-block;
+      background-color: #0f172a;
+      color: #38bdf8;
+      border: 1px solid #334155;
+      border-radius: 20px;
+      padding: 6px 11px;
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skills span {
+      background-color: #1e293b;
+      color: #38bdf8;
+      border: 1px solid #334155;
+      padding: 10px 16px;
+      border-radius: 20px;
+    }
+
+    footer {
+      background-color: #111827;
+      text-align: center;
+      padding: 25px;
+      border-top: 1px solid #1e293b;
+    }
+
+    footer p {
+      color: #94a3b8;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .education-grid,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .foundation-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 650px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav {
+        margin-top: 15px;
+      }
+
+      nav a {
+        margin: 0 7px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .page-container {
+        width: 90%;
+        padding: 45px 0;
+      }
+
+      .foundation-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Apollo Sebastian</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main class="page-container">
+
   <section class="about-hero">
-    <div class="about-hero-content">
-      <p class="section-label">ABOUT ME</p>
+    <p class="section-label">ABOUT ME</p>
 
-      <h1>Building on experience. Moving forward with technology.</h1>
+    <h1>
+      Building on experience. Moving forward with technology.
+    </h1>
 
-      <p class="about-lead">
-        I am Apollo Sebastian, a Data Science student and technology
-        professional focused on artificial intelligence, machine learning,
-        data engineering, software development, and business intelligence.
-      </p>
+    <p class="about-lead">
+      I am Apollo Sebastian, a Data Science student and technology
+      professional focused on artificial intelligence, machine learning,
+      data engineering, software development, and business intelligence.
+    </p>
 
-      <p>
-        My background spans healthcare, military service, entrepreneurship,
-        business operations, fitness, and leadership. Today, I am combining
-        that experience with modern technology to build practical,
-        data-driven and AI-powered solutions.
-      </p>
-    </div>
+    <p>
+      My professional background spans healthcare, military service,
+      entrepreneurship, business operations, fitness, leadership, and
+      technology. Today, I am combining that experience with modern
+      AI and data technologies to build practical solutions to real-world
+      business problems.
+    </p>
   </section>
 
 
-  <!-- EDUCATION -->
   <section class="about-section">
 
     <div class="section-heading">
       <p class="section-label">EDUCATION</p>
+
       <h2>Education & Professional Development</h2>
 
       <p>
-        My education combines formal university study with applied training
-        in artificial intelligence, machine learning, cybersecurity,
-        software development, data science, and data engineering.
+        My education combines formal university study with applied
+        professional training in artificial intelligence, data science,
+        machine learning, cybersecurity, software development, and
+        data engineering.
       </p>
     </div>
 
 
-    <!-- CURRENT EDUCATION -->
     <div class="education-category">
-      <h3 class="category-title">Current Education & Advanced Training</h3>
+
+      <h3 class="category-title">
+        Current Education & Advanced Training
+      </h3>
 
       <div class="education-grid">
 
         <article class="info-card">
-          <span class="card-status">In Progress</span>
+          <span class="card-status">IN PROGRESS</span>
 
           <h3>Arizona State University</h3>
 
@@ -54,19 +328,19 @@
           </p>
 
           <p class="card-meta">
-            Senior-Level Studies | Expected 2027
+            Senior-Level Studies | Expected December 2027
           </p>
 
           <p>
-            Data Science, Business Intelligence Analytics, statistical
-            learning, mathematics, data mining, software development,
-            and applied analytics.
+            Data science, business intelligence analytics,
+            statistical learning, data mining, mathematics,
+            software development, and applied analytics.
           </p>
         </article>
 
 
         <article class="info-card">
-          <span class="card-status">In Progress</span>
+          <span class="card-status">IN PROGRESS</span>
 
           <h3>University of San Diego</h3>
 
@@ -75,19 +349,20 @@
           </p>
 
           <p class="card-meta">
-            2026–2027
+            September 2026 – May 2027
           </p>
 
           <p>
-            Data engineering fundamentals, extraction, integration,
-            ETL pipelines, databases, cloud data systems,
-            architecture, governance, and capstone development.
+            Data engineering fundamentals, data extraction,
+            ETL pipelines, integration, relational databases,
+            cloud data systems, AWS, architecture, governance,
+            and capstone development.
           </p>
         </article>
 
 
         <article class="info-card">
-          <span class="card-status">Professional Training</span>
+          <span class="card-status">IN PROGRESS</span>
 
           <h3>Business Science University</h3>
 
@@ -100,8 +375,9 @@
           </p>
 
           <p>
-            Time-series forecasting, Prophet, ARIMA, forecasting evaluation,
-            backtesting, automation, monitoring, and business forecasting.
+            Time-series forecasting, Prophet, ARIMA,
+            forecast evaluation, backtesting, automation,
+            monitoring, and business forecasting systems.
           </p>
         </article>
 
@@ -109,21 +385,22 @@
     </div>
 
 
-    <!-- COMPLETED CREDENTIALS -->
     <div class="education-category">
 
-      <h3 class="category-title">Completed Professional Credentials</h3>
+      <h3 class="category-title">
+        Completed Professional Credentials
+      </h3>
 
       <div class="education-grid">
 
         <article class="info-card">
-          <span class="card-status completed">Completed</span>
+          <span class="card-status">COMPLETED</span>
 
           <h3>University of Texas at Austin</h3>
 
           <p class="credential">
             Post Graduate Program in Artificial Intelligence
-            and Machine Learning
+            and Machine Learning: Business Applications
           </p>
 
           <p class="card-meta">
@@ -131,15 +408,15 @@
           </p>
 
           <p>
-            Machine learning, predictive modeling, NLP,
-            exploratory data analysis, classification,
-            churn analysis, and business applications.
+            Machine learning, predictive modeling,
+            natural language processing, exploratory data analysis,
+            classification, churn analysis, and business applications.
           </p>
         </article>
 
 
         <article class="info-card">
-          <span class="card-status completed">Completed</span>
+          <span class="card-status">COMPLETED</span>
 
           <h3>Johns Hopkins University</h3>
 
@@ -154,13 +431,13 @@
           <p>
             Network security, cryptography, malware analysis,
             MITRE ATT&CK, Wireshark, risk management,
-            AI security, governance, and privacy.
+            data security, AI security, governance, and privacy.
           </p>
         </article>
 
 
         <article class="info-card">
-          <span class="card-status completed">Completed</span>
+          <span class="card-status">COMPLETED</span>
 
           <h3>Business Science University</h3>
 
@@ -169,19 +446,19 @@
           </p>
 
           <p class="card-meta">
-            2026 | Capstone Competition Winner | 92/100
+            2026 | Capstone Winner | Final Score: 92/100
           </p>
 
           <p>
             Generative AI, RAG, LangGraph, AI agents,
-            multi-agent systems, SQL agents, MCP,
-            Streamlit, and production AI deployment.
+            multi-agent systems, SQL agents, OpenAI tool calling,
+            MCP, Streamlit, and production deployment.
           </p>
         </article>
 
 
         <article class="info-card">
-          <span class="card-status completed">Completed</span>
+          <span class="card-status">COMPLETED</span>
 
           <h3>Microsoft</h3>
 
@@ -196,7 +473,8 @@
           <p>
             Azure AI, natural language processing,
             computer vision, machine learning,
-            GitHub Copilot, and applied AI solutions.
+            GitHub Copilot, AI engineering,
+            and applied AI solutions.
           </p>
         </article>
 
@@ -204,10 +482,11 @@
     </div>
 
 
-    <!-- FOUNDATION EDUCATION -->
     <div class="education-category">
 
-      <h3 class="category-title">Foundation & Prior Education</h3>
+      <h3 class="category-title">
+        Foundation & Prior Education
+      </h3>
 
       <div class="foundation-grid">
 
@@ -242,20 +521,20 @@
   </section>
 
 
-  <!-- SKILLS -->
   <section class="about-section">
 
     <div class="section-heading">
       <p class="section-label">TECHNICAL SKILLS</p>
+
       <h2>Technology & Development</h2>
 
       <p>
-        Technologies and tools I currently use across data science,
-        AI engineering, software development, and analytics.
+        Technologies and tools I use across artificial intelligence,
+        software development, data science, analytics, and engineering.
       </p>
     </div>
 
-    <div class="skills skill-layout">
+    <div class="skills">
       <span>Python</span>
       <span>JavaScript</span>
       <span>HTML</span>
@@ -275,16 +554,16 @@
   </section>
 
 
-  <!-- PROFESSIONAL EXPERIENCE -->
   <section class="about-section">
 
     <div class="section-heading">
       <p class="section-label">EXPERIENCE</p>
+
       <h2>Professional Background</h2>
 
       <p>
         My technology career builds on decades of experience in
-        high-responsibility operational environments.
+        high-responsibility professional and operational environments.
       </p>
     </div>
 
@@ -294,9 +573,9 @@
         <h3>Healthcare</h3>
 
         <p>
-          Extensive clinical and operational experience in healthcare,
-          including critical-care environments, workflow management,
-          technology systems, and patient care.
+          Extensive healthcare experience supporting critical-care
+          environments, clinical operations, workflow management,
+          enterprise systems, and patient care.
         </p>
       </article>
 
@@ -307,7 +586,7 @@
         <p>
           Experience owning and operating businesses, leading teams,
           managing customers, improving operations, and making
-          data-informed business decisions.
+          business decisions based on real-world performance.
         </p>
       </article>
 
@@ -316,7 +595,7 @@
         <h3>Artificial Intelligence & Data</h3>
 
         <p>
-          Building applied AI, machine-learning, data-analysis,
+          Developing applied AI, machine-learning, data-analysis,
           automation, and software projects designed to solve
           practical business problems.
         </p>
@@ -327,3 +606,12 @@
   </section>
 
 </main>
+
+<footer>
+  <p>
+    &copy; 2026 Apollo Sebastian | Portfolio
+  </p>
+</footer>
+
+</body>
+</html>
